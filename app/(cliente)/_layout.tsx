@@ -1,8 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import React from "react";
 
-export default function TabLayout() {
+export default function ClienteLayout() {
   return (
     <Tabs
       screenOptions={{
@@ -11,47 +10,38 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="screen1"
+        name="home"
         options={{
-          title: "Pantalla1",
+          title: "Inicio",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="screen2"
+        name="catalogos"
         options={{
-          title: "Pantalla2",
+          title: "Catálogos",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="paper-plane" color={color} />
+            <FontAwesome size={28} name="book" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="screen3"
+        name="abonos"
         options={{
-          title: "Pantalla3",
+          title: "Abonos",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="paper-plane" color={color} />
+            <FontAwesome size={28} name="money" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="screen4"
+        name="perfil"
         options={{
-          title: "Pantalla4",
+          title: "Perfil",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="paper-plane" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="screen5"
-        options={{
-          title: "Pantalla5",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="paper-plane" color={color} />
+            <FontAwesome size={28} name="user" color={color} />
           ),
         }}
       />
