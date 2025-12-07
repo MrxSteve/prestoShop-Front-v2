@@ -1,27 +1,12 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-type UserRole = "cliente" | "admin" | null;
+const AuthContext = createContext(undefined);
 
-interface User {
-  id: string;
-  nombre: string;
-  role: UserRole;
-}
-
-interface AuthContextType {
-  user: User | null;
-  isLoading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  logout: () => void;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email, password) => {
     setIsLoading(true);
     try {
       // TODO: Aquí irá tu lógica de autenticación real (API call)
@@ -29,7 +14,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Ejemplo: determinar rol basado en el email
-      const role: UserRole = email.includes("admin") ? "admin" : "cliente";
+      const role = email.includes("admin") ? "admin" : "cliente";
 
       setUser({
         id: "1",

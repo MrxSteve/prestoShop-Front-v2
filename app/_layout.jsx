@@ -1,9 +1,9 @@
-import { AuthProvider, useAuth } from "@/src/contexts/AuthContext";
+import { AuthProvider, useAuth } from "../src/contexts/AuthContext";
 import {
-  Slot,
-  useNavigationContainerRef,
-  useRouter,
-  useSegments,
+    Slot,
+    useNavigationContainerRef,
+    useRouter,
+    useSegments,
 } from "expo-router";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";

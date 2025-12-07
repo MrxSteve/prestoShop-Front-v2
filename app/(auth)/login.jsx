@@ -1,11 +1,11 @@
-import { useAuth } from "@/src/contexts/AuthContext";
+import { useAuth } from "../../src/contexts/AuthContext";
 import { useState } from "react";
 import {
-  ActivityIndicator,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    ActivityIndicator,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
 
 export default function Login() {
@@ -23,7 +23,7 @@ export default function Login() {
       console.log("Intentando login con:", email);
       await login(email, password);
       console.log("Login exitoso");
-      // La navegación se manejará automáticamente en el _layout.tsx raíz
+      // La navegación se manejará automáticamente en el _layout.jsx raíz
     } catch (error) {
       console.error("Error en login:", error);
       alert("Error al iniciar sesión");
