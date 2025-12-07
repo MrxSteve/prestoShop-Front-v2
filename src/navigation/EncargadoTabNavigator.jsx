@@ -5,7 +5,6 @@ import { TouchableOpacity } from "react-native";
 
 import EncargadoHomeScreen from "../screens/encargado/EncargadoHomeScreen";
 import EncargadoProductosScreen from "../screens/encargado/EncargadoProductosScreen";
-import EncargadoVentasScreen from "../screens/encargado/EncargadoVentasScreen";
 import EncargadoClientesScreen from "../screens/encargado/EncargadoClientesScreen";
 import EncargadoAbonosScreen from "../screens/encargado/EncargadoAbonosScreen";
 
@@ -54,16 +53,7 @@ export default function EncargadoTabNavigator({ navigation }) {
         }}
       />
 
-      <Tab.Screen
-        name="EncargadoVentas"
-        component={EncargadoVentasScreen}
-        options={{
-          title: "Ventas",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="cart-outline" size={size} color={color} />
-          ),
-        }}
-      />
+      
 
       <Tab.Screen
         name="EncargadoClientes"
